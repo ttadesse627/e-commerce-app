@@ -2,11 +2,12 @@ import { Component, NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductItem } from '../shared/models/ProductItem';
 import { CommonModule } from '@angular/common';
+import { AuthComponent } from './auth/auth.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, CommonModule
+    RouterOutlet, CommonModule,AuthComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
