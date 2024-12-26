@@ -1,17 +1,5 @@
 <h5>Available devices</h5>
-    <div class="bg-purple-400 p-4 flex flex-wrap gap-4">
-      <div
-        *ngFor="let item of items; index as i"
-        class="max-w-sm w-full md:w-1/3 p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-700 dark:border-gray-700 flex flex-col"
-      >
-        <div class="text-lg font-bold text-gray-900 dark:text-white mt-2">
-          Name: {{ item.name }}
-        </div>
-        <div class="text-gray-600 dark:text-gray-400 mt-2">
-          Price: {{ item.price }} ETB
-        </div>
-        <div>
-            <a [routerLink]="['/', item.id]" class="text-blue-500 hover:underline mt-2 inline-block">See Details...</a>
-        </div>
-      </div>
-    </div>
+<div class="bg-purple-400 p-4 flex flex-wrap gap-4">
+  <a [routerLink]="['/product']">See products</a>
+  <router-outlet></router-outlet>
+</div>

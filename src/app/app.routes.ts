@@ -1,15 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
-import { ProductItem } from './shared/models/ProductItem';
 import { NgModule } from '@angular/core';
+import { HomeRoutingModule } from './features/home/home.routes';
 
 export const routes: Routes = [
-    
-    {
-        path: ':id',
-        title: 'Product Details',
-        component: ProductItem
-    },
     {
         path: '',
         title: 'Home',
@@ -19,9 +13,12 @@ export const routes: Routes = [
 
 @NgModule(
     {
-        imports: [RouterModule.forRoot(routes)],
+        imports: [
+            RouterModule.forRoot(routes),
+            HomeRoutingModule
+        ],
         exports: [RouterModule],
     }
 )
 
-export class AppRoutingModule{}
+export class AppRoutingModule { }
