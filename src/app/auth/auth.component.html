@@ -1,3 +1,21 @@
     <div class="container bg-purple-400 w-full h-full">
+        <div>
+            <h4 class="text-center text-lg">Register a User</h4>
+        </div>
+        <form action="" [formGroup]="registrationForm">
+            <div>
+                <label for="name">
+                    Name
+                    <input type="text" formControlName="name">
+                </label>
+            </div>
+            <div>
+                <label for="email">
+                    Email
+                    <input type="email" formControlName="email">
+                </label>
+            </div>
+            <button type="submit" class="">Submit</button>
+        </form>
         <div class="btn"><button type="button" class="bg-blue-600 w-8">Login</button></div>
     </div>
