@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ProductItem } from '../../../../shared/models/ProductItem';
 import { ProductService } from '../../services/product.service';
 import { RouterModule } from '@angular/router';
@@ -11,11 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  items: ProductItem[] = [];
+  items = signal<ProductItem[]>([]);
   constructor(private productService: ProductService) {
-    this.items = this.productService.getAllProduct();
+    this.items.update((value) => [...value, ...this.productService.getAllProduct()]);
     console.log(this.items);
   }
-
-
 }
