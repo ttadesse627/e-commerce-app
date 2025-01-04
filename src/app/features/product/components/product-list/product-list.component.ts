@@ -14,6 +14,5 @@ export class ProductListComponent {
   items = signal<ProductItem[]>([]);
   constructor(private productService: ProductService) {
     this.items.update((value) => [...value, ...this.productService.getAllProduct()]);
-    console.log(this.items);
   }
 }

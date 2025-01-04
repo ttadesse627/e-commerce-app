@@ -1,8 +1,7 @@
 <h5>Available devices</h5>
 <div class="bg-purple-400 p-4 flex flex-wrap gap-4">
-  <a [routerLink]="['/product']" class="">See products</a>
   <div class="">
-    <p>From Product list</p>
-    <router-outlet></router-outlet>
+    <a [routerLink]="['/product']" class="cursor-pointer text-blue-700 ">See products</a>
+    <router-outlet />
   </div>
 </div>
