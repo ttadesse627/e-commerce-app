@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -10,8 +10,16 @@ import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
   encapsulation: ViewEncapsulation.None
 })
 export class AuthComponent {
-  registrationForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
+  loginForm = new FormGroup({
+    username: new FormControl('', [Validators.minLength(2), Validators.required]),
+    password: new FormControl('', [Validators.required]),
   });
+
+  handleSubmit(){
+    alert("Hello "+this.loginForm.value.username)
+    this.loginForm.patchValue({
+      username: '',
+      password: ''
+    });
+  }
 }

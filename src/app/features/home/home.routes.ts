@@ -8,9 +8,8 @@ import { ProductDetailsComponent } from "../product/components/product-details/p
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         title: 'Home',
-        redirectTo: '',
         component: HomeComponent
     },
     {

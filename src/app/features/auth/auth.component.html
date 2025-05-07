@@ -1,21 +1,16 @@
-    <div class="container bg-purple-400 w-full h-full">
+    <div class="container bg-purple-400 m-5 p-5">
         <div>
-            <h4 class="text-center text-lg">Register a User</h4>
+            <h4 class="text-center text-lg">Login Form</h4>
         </div>
-        <form action="" [formGroup]="registrationForm">
-            <div>
-                <label for="name">
-                    Name
-                    <input type="text" formControlName="name">
-                </label>
+        <form (ngSubmit)="handleSubmit()" [formGroup]="loginForm" class="bg-purple-500 rounded">
+            <div class="p-3 mx-3 my-2">
+                <label for="username" class="px-2 py-1 font-medium">Username</label>
+                <input type="text" formControlName="username" class="px-2 py-1 font-medium rounded">
             </div>
-            <div>
-                <label for="email">
-                    Email
-                    <input type="email" formControlName="email">
-                </label>
+            <div class="p-3 mx-3">
+                <label for="password" class="px-2 py-1 font-medium"> Password</label>
+                <input type="password" formControlName="password" class="px-2 py-1 font-medium rounded">
             </div>
-            <button type="submit" class="">Submit</button>
+            <button type="submit" class="">Login</button>
         </form>
-        <div class="btn"><button type="button" class="bg-blue-600 w-8">Login</button></div>
     </div>

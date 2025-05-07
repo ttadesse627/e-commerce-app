@@ -1,0 +1,40 @@
+<div class="container bg-blue-200 m-5 p-5">
+    <div>
+        <h4 class="text-center text-lg">User Registration Form</h4>
+    </div>
+    <form [formGroup]="userRegistrationForm" (ngSubmit)="handleSubmit()" class="bg-blue-500 rounded">
+        <div class="p-3 mx-3 my-2">
+            <label for="firstName" class="px-2 py-1 font-medium">First Name</label>
+            <input type="text" formControlName="firstName" class="px-2 py-1 font-medium rounded">
+        </div>
+        <div class="p-3 mx-3">
+            <label for="lastName" class="px-2 py-1 font-medium"> Last Name</label>
+            <input type="text" formControlName="lastName" class="px-2 py-1 font-medium rounded">
+        </div>
+        <div class="p-3 mx-3 my-2">
+            <label for="email" class="px-2 py-1 font-medium">Email</label>
+            <input type="email" formControlName="email" class="px-2 py-1 font-medium rounded">
+        </div>
+        <div formGroupName="address" class="m-5 p-5 rounded bg-blue-600">
+            <h3 class="font-bold text-lg right-200">Address</h3>
+            <div class="bg-gray-600 h-0.5"><br></div>
+            <div class="p-3 mx-3">
+                <label for="city" class="px-2 py-1 font-medium"> City</label>
+                <input type="text" formControlName="city" class="px-2 py-1 font-medium rounded">
+            </div>
+            <div class="p-3 mx-3">
+                <label for="subcity" class="px-2 py-1 font-medium"> Subcity</label>
+                <input type="text" formControlName="subcity" class="px-2 py-1 font-medium rounded">
+            </div>
+            <div class="p-3 mx-3">
+                <label for="woreda" class="px-2 py-1 font-medium"> Woreda</label>
+                <input type="text" formControlName="woreda" class="px-2 py-1 font-medium rounded">
+            </div>
+        </div>
+        <button type="submit" [disabled]="!userRegistrationForm.valid">Submit</button>
+    </form>
+
+    <hr>
+    <p>Form Value: {{ userRegistrationForm.value | json }}</p>
+    <p>Form Status: {{ userRegistrationForm.status }}</p>
+</div>
